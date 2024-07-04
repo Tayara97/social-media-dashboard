@@ -1,0 +1,348 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /* ### Primary */
+  --Weight-Normal: 400;
+  --Weight-bold: 700;
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+  --YouTube: hsl(348, 97%, 39%);
+
+  /* #### Dark Theme */
+
+  --Dark-Toggle: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+  /* #### Light Theme */
+
+  --Light-Toggle: hsl(230, 22%, 74%);
+
+  /* ### Neutral
+
+#### Dark Theme */
+
+  --Very-Dark-Blue: hsl(230, 17%, 14%); /*(BG)*/
+  --Very-Dark-Blue: hsl(232, 19%, 15%); /*(Top BG Pattern)*/
+  --Dark-Desaturated-Blue: hsl(228, 28%, 20%); /*(Card BG)*/
+  --Desaturated-Blue: hsl(228, 34%, 66%); /*(Text)*/
+  --White: hsl(0, 0%, 100%); /*(Text)*/
+
+  /* #### Light Theme */
+
+  --White: hsl(0, 0%, 100%); /*BG*/
+  --Very-Pale-Blue: hsl(225, 100%, 98%); /*(Top BG Pattern)*/
+  --Light-Grayish-Blue: hsl(227, 47%, 96%); /*(Card BG)*/
+  --Dark-Grayish-Blue: hsl(228, 12%, 44%); /*(Text)*/
+  --Very-Dark-Blue: hsl(230, 17%, 14%); /*(Text)*/
+}
+body {
+  background-color: var(--White);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter;
+}
+h3 {
+  font-size: 14px;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.container {
+  padding: 1.5rem;
+  width: 375px;
+}
+.container .header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.container .header .title {
+  border-bottom: 1px solid var(--Dark-Grayish-Blue);
+  padding: 1rem 0;
+}
+.container .header .title h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+.container .header .title p {
+  color: var(--Dark-Grayish-Blue);
+  font-size: 14px;
+  font-weight: var(--Weight-bold);
+}
+.container .header .dark-mode {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.container .header .dark-mode .text {
+  color: var(--Dark-Grayish-Blue);
+  font-size: 14px;
+  font-weight: var(--Weight-bold);
+}
+.container .header .dark-mode .toggle-switcher {
+  width: 34px;
+  height: 18px;
+  background-color: var(--Light-Toggle);
+  border-radius: 10px;
+  position: relative;
+}
+
+.header .dark-mode .toggle-switcher .toggle-circle {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: var(--White);
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+.container .social-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .social-cards .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--Very-Pale-Blue);
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.container .social-cards .card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  left: 0;
+  top: 0;
+}
+.container .social-cards .card.facebook::before {
+  background: var(--Facebook);
+}
+.container .social-cards .card.twitter::before {
+  background: var(--Twitter);
+}
+.container .social-cards .card.instagram::before {
+  background: var(--Instagram);
+}
+.container .social-cards .card.youtube::before {
+  background: var(--YouTube);
+}
+.container .social-cards .card .user {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0 1rem;
+}
+.container .social-cards .card .user .user-name {
+  font-size: 12px;
+  color: var(--Dark-Grayish-Blue);
+  font-weight: var(--Weight-bold);
+  margin-left: 5px;
+}
+.container .social-cards .card .total-followers {
+  text-align: center;
+}
+.container .social-cards .card .total-followers .followers-number {
+  display: block;
+  color: var(--Very-Dark-Blue);
+  font-size: 50px;
+  font-weight: var(--Weight-bold);
+}
+.social-cards .card .total-followers .text {
+  color: var(--Dark-Grayish-Blue);
+  letter-spacing: 5px;
+  font-size: 12px;
+}
+.container .social-cards .card .progress {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+.container .social-cards .card .progress .today {
+  font-size: 12px;
+  font-weight: var(--Weight-bold);
+  margin-left: 5px;
+  color: var(--Lime-Green);
+}
+.container .social-cards .card .progress .today.up {
+  color: var(--Lime-Green);
+}
+.container .social-cards .card .progress .today.down {
+  color: var(--Bright-Red);
+}
+.container .accounts-overview h2 {
+  color: var(--Dark-Grayish-Blue);
+  margin: 1rem 0;
+}
+
+.container .accounts-overview .overview-cards {
+  gap: 10px;
+  display: grid;
+  grid-template-columns: 100%;
+}
+.container .accounts-overview .overview-cards .card {
+  background-color: var(--Very-Pale-Blue);
+  border-radius: 10px;
+  padding: 20px;
+}
+.accounts-overview .overview-cards .card .account-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.overview-cards .card .account-title h3 {
+  color: var(--Dark-Grayish-Blue);
+}
+.accounts-overview .overview-cards .card .count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accounts-overview .overview-cards .card .count > span {
+  color: var(--Very-Dark-Blue);
+  font-size: 30px;
+  font-weight: var(--Weight-bold);
+}
+.overview-cards .card .count .arrow {
+  display: flex;
+  align-items: center;
+}
+.overview-cards .card .count .arrow .prog-num {
+  font-size: 12px;
+  margin-left: 2px;
+  font-weight: var(--Weight-bold);
+}
+.overview-cards .card .count .arrow.up .prog-num {
+  color: var(--Lime-Green);
+}
+.overview-cards .card .count .arrow.down .prog-num {
+  color: var(--Bright-Red);
+}
+
+/* Dark theme */
+.container.dark {
+  background-color: var(--Very-Dark-Blue);
+}
+.container.dark .header .title h1 {
+  color: var(--White);
+}
+.container.dark .header .title p {
+  color: var(--Desaturated-Blue);
+}
+.container.dark .header .dark-mode .text {
+  color: var(--Desaturated-Blue);
+}
+.container.dark .header .dark-mode .toggle-switcher {
+  background: var(--Dark-Toggle);
+}
+.container.dark .header .dark-mode .toggle-switcher .toggle-circle {
+  left: 1px;
+  background-color: var(--Very-Dark-Blue);
+}
+.container.dark .social-cards .card {
+  background-color: var(--Dark-Desaturated-Blue);
+}
+.container.dark .social-cards .card .user .user-name {
+  color: var(--Desaturated-Blue);
+}
+.container.dark .social-cards .card .total-followers .followers-number {
+  color: var(--White);
+}
+.container.dark .accounts-overview h2 {
+  color: var(--White);
+}
+
+.container.dark .accounts-overview .overview-cards .card {
+  background-color: var(--Dark-Desaturated-Blue);
+}
+.container.dark .overview-cards .card .account-title h3 {
+  color: var(--Desaturated-Blue);
+}
+.container.dark .accounts-overview .overview-cards .card .count > span {
+  color: var(--White);
+}
+
+/* media queries */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* light mode */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+  .container .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container .header .title {
+    border: none;
+  }
+  .container .header .dark-mode .text {
+    margin-right: 10px;
+  }
+  .container .header .dark-mode .toggle-switcher:hover {
+    cursor: pointer;
+    background: var(--Dark-Toggle);
+  }
+  .container .social-cards {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .container .social-cards .card {
+    flex-basis: 45%;
+  }
+
+  .container .accounts-overview .overview-cards {
+    grid-template-columns: 50% 50%;
+  }
+  .container .accounts-overview .overview-cards .card:hover,
+  .container .social-cards .card:hover {
+    background-color: var(--Light-Grayish-Blue);
+    cursor: pointer;
+  }
+  /* dark mode */
+  .container.dark .social-cards .card:hover,
+  .container.dark .accounts-overview .overview-cards .card:hover {
+    background-color: var(--Dark-Grayish-Blue);
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    min-width: 1100px;
+  }
+  .container .social-cards .card {
+    flex-basis: 23%;
+  }
+  .container .accounts-overview .overview-cards {
+    grid-template-columns: repeat(auto-fill, 245px);
+    gap: 24px;
+  }
+}
